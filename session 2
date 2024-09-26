@@ -1,0 +1,52 @@
+
+console.log('hello');
+console.log("jhon");
+console.log(`you can call me "santi"`);
+console.log("Go away, im colding");
+console.log(`i am sorry\nplease forgive me`);
+//2
+let number1 = 3;
+let number2 = 9;
+let number3 = 7;
+let number4 = 6;
+let number5 = 2;
+console.log(number1 + number2 + number3 * number4 / number5);
+console.log(number1 + (number2 - number3) * number4 / number5);
+//3
+let conditionA = true;
+let conditionB = false;
+let conditionC = true;
+let conditionD = false;
+console.log(conditionA && conditionB || conditionC && !conditionD);
+//4
+let age = 9;
+let result = (age > 17) ? "teenagers" : "children";
+console.log(result);
+//5
+let numA =176;
+let numB = 103;
+console.log(numA & numB);
+console.log(numA | numB);
+console.log(numA ^ numB);
+console.log(numA >> 2);
+console.log(numB >> 2);
+console.log(numA << 2);
+console.log(numB << 2);
+let numC = 1;
+console.log(numC << 1);
+console.log(numC << 2);
+console.log(numC << 3);
+console.log(numC << 4);
+console.log(numC << 5);
+console.log(numC << 6);
+console.log(numC << 7);
+console.log(numC << 8);
+//6
+let fullname = (fn,mn,ln) => {
+    return `${fn} ${mn} ${ln}, ${getTitle()}`;
+}
+let getTitle = () =>{
+    return "B.sc"
+}
+
+console.log(fullname("john", "dream", "myung"));
