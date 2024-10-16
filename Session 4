@@ -1,0 +1,56 @@
+//Q1
+
+let studentsScore = [
+    {name: 'andi', score: 90},
+    {name: 'Rudi', score: 80},
+    {name: 'Dira', score: 100}
+    ];
+    
+    let highestScore = 0;
+    let highestScorer = '';
+    
+    for (let i = 0; i < studentsScore.length; i++) {
+        if (studentsScore[i].score>highestScore) {
+            highestScore = studentsScore[i].score;
+            highestScorer = studentsScore[i].name;
+    
+        }
+    }
+    
+    console.log('student with highest score is '+highestScorer+' with total score '+highestScore+'.');
+
+
+//Q2
+// Data MotoGP
+const motoGP = [
+    { circuit: 'Losail', location: 'Qatar', winner: { firstName: 'Andrea', lastName: 'Dovizioso', country: 'Italy' } },
+    { circuit: 'Autodromo', location: 'Argentina', winner: { firstName: 'Cal', lastName: 'Crutchlow', country: 'UK' } },
+    { circuit: 'De Jerez', location: 'Spain', winner: { firstName: 'Valentino', lastName: 'Rossi', country: 'Italy' } },
+    { circuit: 'Mugello', location: 'Italy', winner: { firstName: 'Andrea', lastName: 'Dovizioso', country: 'Italy' } }
+  ];
+  
+  const groupedByCountry = {};
+  
+  motoGP.forEach(event => {
+    const winner = event.winner;
+    const country = winner.country;
+    if (!groupedByCountry[country]) {
+      groupedByCountry[country] = { winningCircuits: [], totalWins: 0 };
+    }
+    groupedByCountry[country].winningCircuits.push({
+      name: winner.firstName + ' ' + winner.lastName,
+      winLocation: event.circuit + ', ' + event.location
+    });
+    groupedByCountry[country].totalWins++;
+  });
+  
+  //print
+  for (const country in groupedByCountry) {
+    console.log('Country: ' + country);
+    console.log('Total Wins: ' + groupedByCountry[country].totalWins);
+    console.log('Winning Circuits:');
+    groupedByCountry[country].winningCircuits.forEach(circuit => {
+      console.log(' - ' + circuit.name + ' at ' + circuit.winLocation);
+    });
+    console.log('');
+  }
